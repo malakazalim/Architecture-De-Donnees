@@ -30,22 +30,7 @@ with DDGS() as ddgs:
             content = " ".join([p.get_text() for p in paragraphs])
 
             # softer filter
-            if len(content) < 100:
-                continue
-
-            articles.append({
-                "title": title.strip(),
-                "content": content.strip(),
-                "source": source,
-                "url": url,
-                "date": date,
-                "category": "finance"
-            })
-
-            print(f"✔ {source} | {title[:60]}")
-
-        except Exception:
-            continue
+         
 
 df = pd.DataFrame(articles)
 
